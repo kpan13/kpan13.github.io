@@ -1,0 +1,55 @@
+body{
+    /*background-color: rgb(107, 172, 172);*/
+    /*background-image: url("https://media.istockphoto.com/id/1138875233/vector/vector-illustration-of-cartoon-park-or-woodland.jpg?s=612x612&w=0&k=20&c=Bv-uYaZvDmFeqhGHpPup1Dem9YdvAydExogvnwUdZ7E=");*/
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-image:url("https://media.istockphoto.com/id/1244414186/vector/old-tree-in-idyllic-landscape.jpg?s=2048x2048&w=is&k=20&c=ZOXlo1HytUaJgsoEdA3wFDemnyW0GpNSAjzQEvbdBKM=");
+}
+#start{
+    background: rgb(71, 43, 43);
+    align-items:right;
+    color:white;
+    float:right;
+    
+}
+h1{
+    color:white;
+    font-style: normal;
+    text-align: right;
+    font-size: 30px;
+}
+.container{
+    display: flex;
+    position:absolute;
+    top:550px;
+    right:150px;
+    bottom:20px;
+    /*left:500px;*/
+    
+    width: 800px;
+    height:800px;
+    border:2px;
+    background-color: rgb(185, 224, 198);
+    border-radius:20px;
+    background-position:400px 200px;
+}
+.front-side{
+    width: 60px;
+    height:60px;
+    background-color: white;
+    border-radius:10px;
+ }
+.back-view img{
+    max-width: 60px;
+    
+}
+.cards{
+    width:60px;
+    height:60px;
+    flex-wrap:wrap;
+}
+.card{
+    list-style:none;
+    cursor: pointer;
+}
+ 
