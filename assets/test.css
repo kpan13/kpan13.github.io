@@ -38,6 +38,7 @@ h1{
     height:60px;
     background-color: white;
     border-radius:10px;
+    
  }
 .back-view img{
     max-width: 60px;
@@ -53,3 +54,8 @@ h1{
     cursor: pointer;
 }
  
+.monkey1{
+  background-image:url("/monkey1.gif");
+  width:100px;
+  height:100px;                
+}
