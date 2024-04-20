@@ -22,19 +22,19 @@ const getData = () => [
     {imgSrc: "https://media.istockphoto.com/id/1680047056/vector/monkey-singing-on-jungle-vines-with-banana-cartoon.jpg?s=612x612&w=0&k=20&c=5AX662MrefEXjWhFIQfSJy0gHgTsUvKB5sbaEvTBXak=", name:"monkey"},
     
 ];
+//randomize 
 
 const randomize = () => {
     const cardData = getData();
     cardData.sort(() => Math.random() - 0.5);
     return cardData; 
 };
-
 randomize();
 
 const cardGenerator = () => {
     const cardData = randomize();
 
- //HTML 
+ //HTML, appendchild  start here
     
     cardData.forEach((item) => {
       const card = document.createElement("div");
@@ -51,23 +51,55 @@ const cardGenerator = () => {
 
     front.src = item.imgSrc; // image source is here
     card.setAttribute("name", item.name);
-   
+  
+    //toggle effect 
+    
     card.addEventListener('click', (e) => {
        card.classList.toggle('toggleCard');
        checkCards(e);
-      
-    });
+      });
+ });    
 
-  });    
-    
 };
-
 //test cards
-const checkCards = (e) => {
+    
+    const checkCards = (e) => {
+    console.log(e);
+   
+   //flipped effect 
+
     const clickedCard = e.target;
-    clickedCard.classList.add("flipped");
-    //flippedCards.push(cards);
-}
+      clickedCard.classList.add("flipped");
+    
+    const flippedCards = document.querySelectorAll(".flipped");
+    console.log(flippedCards);
+    
+    //if / else start here
+   
+    if(flippedCards.length === 2) {
+        if(
+            flippedCards[0].getAttribute("name") === 
+            flippedCards[1].getAttribute("name") 
+        ){
+        console.log("match");
+            flippedCards.forEach((card) => {
+               card.classList.remove("flipped");
+               card.style.pointerEvents = "none";
+        });
+         } else{
+              
+          console.log("wrong");
+            flippedCards.forEach((card) => {
+               card.classList.remove("flipped");
+               setTimeout(() => card.classList.remove("togglecard"), 1000);
+           
+             });
+       }
+    
+    
+    }
+
+};
 
 
 
