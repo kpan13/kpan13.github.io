@@ -1,6 +1,6 @@
 const section = document.querySelector("section");
 const cardsCount =document.querySelector("span");
-const cards = 11
+let cards = 6;
 
 cardsCount.textContent = cards;
 const getData = () => [
@@ -73,10 +73,12 @@ const cardGenerator = () => {
     
     const flippedCards = document.querySelectorAll(".flipped");
     console.log(flippedCards);
+
+    const toggleCard = document.querySelectorAll("toggleCard");
     
     //if / else start here
    
-    if(flippedCards.length === 2) {
+     if(flippedCards.length === 2) {
         if(
             flippedCards[0].getAttribute("name") === 
             flippedCards[1].getAttribute("name") 
@@ -91,16 +93,46 @@ const cardGenerator = () => {
           console.log("wrong");
             flippedCards.forEach((card) => {
                card.classList.remove("flipped");
-               setTimeout(() => card.classList.remove("togglecard"), 1000);
+               setTimeout(() => card.classList.remove("toggleCard"), 1000);
            
-             });
+            });
+            cards--;
+            cardsCount.textContent = cards;
+            if(cards === 0){
+                restart("Please try again");
+            }
        }
-    
-    
+     } 
+    if (toggleCard.length === 16) {
+        restart("You Won");
     }
+    };
+//restart the game 
+    const restart = () => {
+        let cardData = rendomize();
+        let faces = document.querySelectorAll(".front");
+        let cards = document.querySelectorAll(".card");
 
-};
+        section.style.pointerEvents ="none";
+        cardData.forEach((item,index) => {
+            cards[index].classList.remove("toggleCard");
+            
+            setTimeout(() => {
+                
+            cards[index].style.pointerEvents = "all";
+            faces[index].src = item.imgSrc;
+            cards[index].setAttribute("name", item.name);
+            section.style.pointerEvents = "all";
+        }, 1000);
+        });
+        cards = 6;
+        cardsCount.textContent = cards;
+        setTimeout(() => window.alert(text), 100);
+    };
 
 
 
-cardGenerator();
+
+
+    
+    cardGenerator();
