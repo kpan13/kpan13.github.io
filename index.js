@@ -35,30 +35,39 @@ const cardGenerator = () => {
     const cardData = randomize();
 
  //HTML 
+    
     cardData.forEach((item) => {
       const card = document.createElement("div");
+      card.classList = "card";
+      section.appendChild(card);
+
       const front = document.createElement("img");
+      front.classList = "front";
+      card.appendChild(front);
+      
       const back = document.createElement("div");
+      back.classList = "back";
+      card.appendChild(back);
 
-    card.classList = "card";
-    front.classList = "front";
-    back.classList = "back";
-    
     front.src = item.imgSrc; // image source is here
-    back.textContent = item.name; // set the name on the back face
-
-    section.appendChild(card);
-    card.appendChild(front);
-    card.appendChild(back);
-    /*console.log(cardData);*/
-
+    card.setAttribute("name", item.name);
+   
     card.addEventListener('click', (e) => {
        card.classList.toggle('toggleCard');
+       checkCards(e);
+      
     });
 
   });    
     
 };
+
+//test cards
+const checkCards = (e) => {
+    const clickedCard = e.target;
+    clickedCard.classList.add("flipped");
+    //flippedCards.push(cards);
+}
 
 
 
