@@ -24,8 +24,13 @@ Describe the logic involved in player decisions.
   - What happens when the player makes a choice?
 Describe the logic that evaluates the player's victory/loss/progress status:
 
+So The Memory Game is a single player game. In this game there is 16 cards every card has own match.
+If the card does not match then you can see the message "please try again" and if all cards match, then you can
+see the message "you Won". 
 ___________________________________________________________________________________
+so for this  project i used HTML, CSS and JAVA SCRIPT . I used 7 % HTML , 21% CSS and 74% java scripts.
 
+In java script i used randomize, if and else , flipped, toggleCard.
 ___________________________________________________________________________________
 
 ___________________________________________________________________________________
