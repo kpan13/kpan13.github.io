@@ -1,6 +1,6 @@
 const section = document.querySelector("section");
 const cardsCount =document.querySelector("span");
-let cards = 6;
+let cards = 12;
 
 cardsCount.textContent = cards;
 const getData = () => [
@@ -62,19 +62,17 @@ const cardGenerator = () => {
 
 };
 //test cards
-    
     const checkCards = (e) => {
     console.log(e);
    
    //flipped effect 
-
     const clickedCard = e.target;
       clickedCard.classList.add("flipped");
     
     const flippedCards = document.querySelectorAll(".flipped");
     console.log(flippedCards);
 
-    const toggleCard = document.querySelectorAll("toggleCard");
+    const toggleCard = document.querySelectorAll(".toggleCard");
     
     //if / else start here
    
@@ -88,7 +86,7 @@ const cardGenerator = () => {
                card.classList.remove("flipped");
                card.style.pointerEvents = "none";
         });
-         } else{
+         } else {
               
           console.log("wrong");
             flippedCards.forEach((card) => {
@@ -107,32 +105,28 @@ const cardGenerator = () => {
         restart("You Won");
     }
     };
-//restart the game 
-    const restart = () => {
-        let cardData = rendomize();
-        let faces = document.querySelectorAll(".front");
+    
+    //restart the game 
+    const restart = (text) => {
+        let cardData = randomize();
+        let front = document.querySelectorAll(".front");
         let cards = document.querySelectorAll(".card");
 
         section.style.pointerEvents ="none";
-        cardData.forEach((item,index) => {
+        cardData.forEach((item, index) => {
             cards[index].classList.remove("toggleCard");
             
             setTimeout(() => {
                 
             cards[index].style.pointerEvents = "all";
-            faces[index].src = item.imgSrc;
+            front[index].src = item.imgSrc;
             cards[index].setAttribute("name", item.name);
             section.style.pointerEvents = "all";
         }, 1000);
         });
-        cards = 6;
+        cards = 12;
         cardsCount.textContent = cards;
         setTimeout(() => window.alert(text), 100);
     };
 
-
-
-
-
-    
-    cardGenerator();
+ cardGenerator()

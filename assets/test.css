@@ -1,41 +1,82 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-section {
-    display: grid;
-    grid-template-columns: repeat(4,8rem);
-    grid-template-rows: repeat(4,8rem);
-    grid-gap: 9px;
-    perspective: 800px;
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: fixed;
+    right:40px;
+    top:70px;
+    font-size: 75px;
+    color: rgb(62, 41, 41);
+
 }
+
+section{
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(4, 150px);
+    grid-gap: 20px;
+    perspective: 800px;
+    position: fixed;
+    bottom: 40px;
+    right:40px;
+}
+
 .front, .back {
     width: 100%;
     height: 100%;
     border-radius: 20px;
     position:absolute;
     pointer-events:none;
+    flex-direction:right;
 }
+
 .back {
-    background-color: rgb(173, 234, 219);
+    background-color: rgb(66, 141, 94);
     backface-visibility: hidden;
-    
+    border-bottom: 5px solid rgb(60, 70, 61);
+    align-items:right;
+    box-shadow: rgba(74, 69, 69, 0.2) 0px, 5px, 15px;
+
 }
 .card {
     position: relative;
     transform-style: preserve-3d;
     transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: rgba(0,0,0,0.2) 0px, 5px, 15px;
+    box-shadow: rgba(74, 69, 69, 0.2) 0px, 5px, 15px;
+    cursor: pointer;
 }
 
 .toggleCard{
     transform: rotateY(180deg);
 }
+.face{
+    transform: rotateY(-180deg);
+}
 
-body {
+
+
+.wrapper{
+    position:fixed;
+    flex-direction:right;
+    perspective: 800px;
+    bottom: 21px;
+    right: 21px;
+    background-color:rgb(168, 193, 168);
+    width: 700px;
+    height: 700px;
+    border-radius: 20px;
+    opacity:80%;
+    box-shadow: rgba(74, 69, 69, 0.2) 10px, 15px, 15px;
+    
+   
+}
+
+body{
     height:200vh;
-    flex-direction: column;
     flex-direction:row-reverse;
     display:flex;
     align-items:right bottom;
@@ -44,9 +85,4 @@ body {
     background-attachment: fixed;
     background-repeat:no-repeat;
     background-image:url("https://media.istockphoto.com/id/1244414186/vector/old-tree-in-idyllic-landscape.jpg?s=2048x2048&w=is&k=20&c=ZOXlo1HytUaJgsoEdA3wFDemnyW0GpNSAjzQEvbdBKM=");
-}
-
-button{
-    width:60px;
-    height:75px;
 }

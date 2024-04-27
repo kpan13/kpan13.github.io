@@ -1,7 +1,7 @@
 #M1 Project
 
 # Title of Project (This is usually at the top of a repo's main README.md file.)
-
+ Memory Game
 ## Description
 
 _(Replace this text with a brief description of your game and what inspired you to make it.)_
@@ -9,7 +9,7 @@ _(Replace this text with a brief description of your game and what inspired you 
 
 ## Deployment
 
-The web game is deployed at __________________ (YOUR DEPLOYED GITHUB.IO URL).
+The web game is deployed at https://github.com/kpan13/kpan13.github.io.git_(YOUR DEPLOYED GITHUB.IO URL).
 
 
 ## Game Logic
