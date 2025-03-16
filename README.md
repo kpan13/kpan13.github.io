@@ -9,7 +9,8 @@ _(Replace this text with a brief description of your game and what inspired you 
 
 ## Deployment
 
-The web game is deployed at https://github.com/kpan13/kpan13.github.io.git_(YOUR DEPLOYED GITHUB.IO URL).
+The web game is deployed at https://github.com/kpan13/kpan13.github.io/
+//git_(YOUR DEPLOYED GITHUB.IO URL).
 
 
 ## Game Logic
